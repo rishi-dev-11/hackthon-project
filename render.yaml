@@ -1,0 +1,19 @@
+services:
+  # Web service
+  - type: web
+    name: documorph-ai
+    env: python
+    buildCommand: ./build.sh
+    startCommand: cd backend && streamlit run documorph_ai.py --server.port=$PORT --server.address=0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: PYTHONUNBUFFERED
+        value: true
+    healthCheckPath: /
+    autoDeploy: true
+    disk:
+      name: documorph-data
+      mountPath: /data
+      sizeGB: 2
+    plan: free 

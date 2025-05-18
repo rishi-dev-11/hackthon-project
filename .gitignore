@@ -25,7 +25,6 @@ var/
 # Virtual environments
 venv/
 ENV/
-env/
 .env
 hackthonBJP/
 
@@ -43,11 +42,11 @@ hackthonBJP/
 /output/
 *.log
 temp_*.*
-*.docx
-*.pdf
-*.png
-*.jpg
 vector_stores/
+frontend.zip
+*.rar
+*.backup
+*.bak
 
 # MongoDB data
 /data/db/
@@ -63,8 +62,15 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# Keep specific sample files
-!sample_documents/*.docx
-!sample_documents/*.pdf
-!sample_documents/*.png
-!sample_documents/*.jpg 
+# Temporary files that should be excluded
+client_secret_*.json
+*.pickle
+token.json
+
+# Keep important data files
+!requirements.txt
+!setup.py
+!backend/documorph_ai.py
+!backend/version1.0.0/paddle_ocr.py
+!backend/version1.0.0/chart_extraction.py
+!backend/version1.0.0/table_extraction.py 

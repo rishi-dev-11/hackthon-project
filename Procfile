@@ -1,0 +1,1 @@
+web: cd backend && streamlit run documorph_ai.py --server.port=$PORT --server.address=0.0.0.0 

@@ -67,8 +67,8 @@ DocuMorph AI is an intelligent document transformation platform that automates t
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/documorph-ai.git
-   cd documorph-ai
+   git clone https://github.com/rishi-dev-11/hackthon-project.git
+   cd hackthon-project
    ```
 
 2. Create a virtual environment:
@@ -142,6 +142,34 @@ The application offers two tiers:
 - Team collaboration features
 - Up to 100 documents
 - Advanced table and figure processing
+
+## Deployment
+
+### Render.com Deployment
+
+1. Fork or clone this repository
+2. Create a new Web Service on Render.com
+3. Connect your GitHub repository
+4. Use the following settings:
+   - Build Command: `./build.sh`
+   - Start Command: `cd backend && streamlit run documorph_ai.py --server.port=$PORT --server.address=0.0.0.0`
+   - Select the free plan or any paid plan as needed
+
+The repository includes a `render.yaml` configuration file that can be used for automatic deployment.
+
+### Local Docker Deployment
+
+1. Build the Docker image:
+   ```
+   docker build -t documorph-ai .
+   ```
+
+2. Run the container:
+   ```
+   docker run -p 8501:8501 documorph-ai
+   ```
+
+3. Access the application at http://localhost:8501
 
 ## Contributing
 
