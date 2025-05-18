@@ -54,4 +54,4 @@ protobuf==3.20.3  # Specific version for compatibility
 
 # PDF and Image Processing
 pdf2image==1.16.3
-fitz==0.0.1.dev2  # PyMuPDF alias
+fitz==0.0.1.dev2  # PyMuPDF aliasstreamlit==1.38.0
