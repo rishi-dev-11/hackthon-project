@@ -1,0 +1,57 @@
+# Core dependencies
+streamlit==1.35.0
+langchain==0.1.13
+langchain-community==0.0.29
+langchain-core==0.1.27
+langchain-groq==0.0.7
+python-dotenv==1.0.1
+pydantic==2.6.3
+pymongo==4.6.1
+faiss-cpu==1.7.4
+sentence-transformers==2.4.0
+
+# Document processing
+PyMuPDF==1.23.9
+python-docx==1.1.0
+docx2txt==0.8
+pypdf==3.17.3
+tabulate==0.9.0
+msoffcrypto-tool==5.1.1
+python-magic==0.4.27
+python-magic-bin==0.4.14; sys_platform == 'win32'  # For Windows systems
+langdetect==1.0.9
+uuid==1.30
+
+# OCR, Image and Handwriting Recognition
+pytesseract==0.3.10
+paddleocr==2.8.0
+paddlepaddle==2.5.2
+opencv-python==4.10.0.84
+pillow==10.3.0
+numpy==1.26.4
+pi_heif==0.22.0
+
+# Table and Chart processing
+pandas==2.2.1
+matplotlib==3.9.0
+scipy==1.13.1
+unstructured==0.11.8
+unstructured-inference==0.7.23
+
+# NLP and Language Models
+transformers==4.42.3
+spacy==3.7.4
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
+
+# Google API & Integration
+google-api-python-client==2.125.0
+google-auth-oauthlib==1.2.0
+
+# Web Integration & Utilities
+requests==2.31.0
+beautifulsoup4==4.12.3
+protobuf==3.20.3  # Specific version for compatibility
+
+# PDF and Image Processing
+pdf2image==1.16.3
+fitz==0.0.1.dev2  # PyMuPDF alias
