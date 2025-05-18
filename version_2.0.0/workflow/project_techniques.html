@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMorph AI - Project Techniques & Architecture</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #0e6ba8;
+        }
+        h1 {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .diagram {
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f1f8fe;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .architecture-diagram, .workflow-diagram {
+            display: flex;
+            flex-direction: column;
+        }
+        .tier {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .component {
+            background-color: #fff;
+            border: 2px solid #0e6ba8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 0 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 180px;
+        }
+        .component.frontend {
+            background-color: #e1f5fe;
+            border-color: #03a9f4;
+        }
+        .component.backend {
+            background-color: #e8f5e9;
+            border-color: #4caf50;
+        }
+        .component.database {
+            background-color: #fff8e1;
+            border-color: #ffc107;
+        }
+        .component.ai {
+            background-color: #f3e5f5;
+            border-color: #9c27b0;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            color: #0e6ba8;
+            margin: 5px 0;
+        }
+        .workflow-step {
+            background-color: #e8eaf6;
+            border: 2px solid #3f51b5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .workflow-step::after {
+            content: "↓";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: #3f51b5;
+        }
+        .workflow-step:last-child::after {
+            content: none;
+        }
+        .techniques-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .technique-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            border-left: 5px solid #0e6ba8;
+        }
+        .tech-category {
+            font-weight: bold;
+            color: #0e6ba8;
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            border-left: 4px solid #0e6ba8;
+            padding: 15px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DocuMorph AI - Project Techniques & Architecture</h1>
+
+        <div class="section">
+            <h2>System Architecture</h2>
+            <p>DocuMorph AI follows a modern three-tier architecture with dedicated AI components to provide document transformation capabilities.</p>
+            
+            <div class="diagram architecture-diagram">
+                <div class="tier">
+                    <div class="component frontend">
+                        <h3>Frontend</h3>
+                        <p>React + MUI</p>
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="tier">
+                    <div class="component backend">
+                        <h3>Backend API</h3>
+                        <p>FastAPI</p>
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="tier">
+                    <div class="component database">
+                        <h3>Database</h3>
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="component ai">
+                        <h3>AI Processing</h3>
+                        <p>Document Analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Components</h3>
+            <div class="techniques-list">
+                <div class="technique-card">
+                    <div class="tech-category">Frontend</div>
+                    <ul>
+                        <li>React 19 for UI components</li>
+                        <li>Material UI 7 for design system</li>
+                        <li>React Router 7 for navigation</li>
+                        <li>Axios for API requests</li>
+                        <li>Context API for state management</li>
+                    </ul>
+                </div>
+                <div class="technique-card">
+                    <div class="tech-category">Backend</div>
+                    <ul>
+                        <li>FastAPI for RESTful API endpoints</li>
+                        <li>Uvicorn ASGI server</li>
+                        <li>JWT authentication</li>
+                        <li>Motor for async MongoDB operations</li>
+                        <li>Pydantic for data validation</li>
+                    </ul>
+                </div>
+                <div class="technique-card">
+                    <div class="tech-category">Database</div>
+                    <ul>
+                        <li>MongoDB for document storage</li>
+                        <li>AsyncIO for non-blocking database operations</li>
+                        <li>Atlas for cloud hosting (optional)</li>
+                    </ul>
+                </div>
+                <div class="technique-card">
+                    <div class="tech-category">Document Processing</div>
+                    <ul>
+                        <li>pdfplumber for PDF text extraction</li>
+                        <li>OpenPyXL for Excel generation</li>
+                        <li>python-docx for Word document manipulation</li>
+                        <li>Computer Vision for layout detection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Document Processing Workflow</h2>
+            <p>The document processing workflow involves several steps from upload to formatted output:</p>
+            
+            <div class="diagram workflow-diagram">
+                <div class="workflow-step">
+                    <h3>Document Upload</h3>
+                    <p>User uploads a document (PDF, DOCX, etc.) via the frontend</p>
+                </div>
+                <div class="workflow-step">
+                    <h3>Document Analysis</h3>
+                    <p>Backend extracts text, tables, figures, and structure</p>
+                </div>
+                <div class="workflow-step">
+                    <h3>Template Selection</h3>
+                    <p>User selects a template for desired formatting</p>
+                </div>
+                <div class="workflow-step">
+                    <h3>Content Transformation</h3>
+                    <p>Backend applies template rules to document content</p>
+                </div>
+                <div class="workflow-step">
+                    <h3>Preview & Download</h3>
+                    <p>User previews and downloads the transformed document</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>API Authentication Flow</h2>
+            <p>The system uses JWT (JSON Web Tokens) for stateless authentication:</p>
+            
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Process</th>
+                    <th>Implementation</th>
+                </tr>
+                <tr>
+                    <td>1. Registration</td>
+                    <td>User creates account with email/password</td>
+                    <td>Hashed using bcrypt before storage</td>
+                </tr>
+                <tr>
+                    <td>2. Login</td>
+                    <td>User provides credentials, server validates</td>
+                    <td>OAuth2PasswordRequestForm from FastAPI</td>
+                </tr>
+                <tr>
+                    <td>3. JWT Generation</td>
+                    <td>Server creates signed token with user data</td>
+                    <td>PyJWT with HS256 algorithm</td>
+                </tr>
+                <tr>
+                    <td>4. Authentication</td>
+                    <td>Token sent in Authorization header</td>
+                    <td>Bearer token pattern</td>
+                </tr>
+                <tr>
+                    <td>5. Token Validation</td>
+                    <td>Server validates and extracts user info</td>
+                    <td>FastAPI Dependency Injection</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Table Extraction Implementation</h2>
+            <p>A key feature of DocuMorph AI is the ability to extract and manipulate tables from PDF documents. The implementation uses pdfplumber and pandas:</p>
+            
+            <div class="code-block">
+                <pre>
+def extract_clean_tables_from_pdf(pdf_file):
+    """
+    Extract tables from a PDF and return a list of cleaned DataFrames.
+    """
+    tables = []
+    with pdfplumber.open(pdf_file) as pdf:
+        for page in pdf.pages:
+            extracted = page.extract_tables()
+            if extracted:
+                for table in extracted:
+                    df = pd.DataFrame(table[1:], columns=table[0])
+                    df = clean_column_names(df)
+                    tables.append(df)
+    return tables
+                </pre>
+            </div>
+            
+            <p>This approach allows for:</p>
+            <ul>
+                <li>Extraction of tabular data from PDF documents</li>
+                <li>Conversion to structured DataFrame objects</li>
+                <li>Data cleaning and normalization</li>
+                <li>Export to various formats (Excel, CSV, etc.)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Frontend-Backend Communication</h2>
+            <p>Communication between frontend and backend is handled through RESTful API calls:</p>
+            
+            <div class="code-block">
+                <pre>
+// Frontend Axios Request
+export const uploadDocument = async (file) => {
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    const response = await axios.post('/api/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading document:', error);
+    throw error;
+  }
+};
+
+# Backend FastAPI Endpoint
+@app.post("/api/upload")
+async def upload_document(
+    file: UploadFile = File(...),
+    background_tasks: BackgroundTasks = None,
+    current_user = Depends(get_optional_user)
+):
+    # Implementation details...
+                </pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Database Schema</h2>
+            <p>MongoDB collections used in the project:</p>
+            
+            <table>
+                <tr>
+                    <th>Collection</th>
+                    <th>Purpose</th>
+                    <th>Key Fields</th>
+                </tr>
+                <tr>
+                    <td>users</td>
+                    <td>Store user information</td>
+                    <td>id, email, hashed_password, name, tier</td>
+                </tr>
+                <tr>
+                    <td>documents</td>
+                    <td>Track uploaded and processed documents</td>
+                    <td>id, original_name, upload_path, status, user_id</td>
+                </tr>
+                <tr>
+                    <td>templates</td>
+                    <td>Store document templates</td>
+                    <td>id, name, description, category, formatting</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Deployment Architecture</h2>
+            <p>The application is designed for flexible deployment:</p>
+            
+            <div class="techniques-list">
+                <div class="technique-card">
+                    <div class="tech-category">Development Environment</div>
+                    <ul>
+                        <li>Local development server</li>
+                        <li>MongoDB running locally or in Atlas</li>
+                        <li>Hot-reloading enabled</li>
+                        <li>Debug logging</li>
+                    </ul>
+                </div>
+                <div class="technique-card">
+                    <div class="tech-category">Production Environment</div>
+                    <ul>
+                        <li>Containerized using Docker</li>
+                        <li>Frontend served as static files</li>
+                        <li>Backend running with Gunicorn/Uvicorn</li>
+                        <li>MongoDB Atlas for database</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

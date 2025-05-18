@@ -1,0 +1,30 @@
+sample_text = """Introduction to DocuMorph AI
+
+DocuMorph AI is a next‑generation document processing tool that:
+- Extracts text from PDFs, Word documents, and images.
+- Converts and uploads content directly into Google Docs and Microsoft Word.
+- Supports rich formatting, tables, and images.
+
+Getting Started
+
+1. Upload a PDF or DOCX via the “Choose File” button.  
+2. Click “Extract & Export.”  
+3. After authentication, your content will appear as a live Google Doc or Word Online document.
+
+Sample Content
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+
+Table of Sample Data
+
+| Language   | Year | Paradigm        |
+|------------|------|-----------------|
+| C          | 1972 | Procedural      |
+| Java       | 1995 | Object‑Oriented |
+| Python     | 1991 | Multi‑Paradigm  |
+
+Thank you for testing DocuMorph AI!
+"""
+with open("sample.txt", "w", encoding="utf-8") as f:
+    f.write(sample_text)
+print("sample.txt written successfully.")
