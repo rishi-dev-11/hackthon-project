@@ -1,0 +1,56 @@
+# Core dependencies
+langchain>=0.1.0
+langchain-community>=0.0.13
+langchain-core>=0.1.10
+unstructured>=0.11.8
+unstructured-inference>=0.7.0
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+streamlit>=1.31.0
+pdf2image>=1.16.3
+pypdf>=3.17.1
+pydantic>=2.5.2
+python-dotenv>=1.0.0
+tabulate>=0.9.0
+pymongo>=4.6.1
+torch>=2.2.0
+pytesseract>=0.3.10
+langchain-groq
+protobuf==3.20.3
+
+# Image processing and OCR
+paddleocr
+paddlepaddle
+opencv-python>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+pi_heif>=0.22.0
+
+# Table and chart processing
+pandas>=2.0.0
+matplotlib>=3.7.0
+transformers>=4.36.0
+scipy>=1.11.0
+PyMuPDF>=1.23.0
+
+# Document processing
+python-docx>=0.8.11
+docx2txt>=0.8
+python-magic>=0.4.27
+python-magic-bin>=0.4.14; sys_platform == 'win32'  # For Windows systems
+langdetect>=1.0.9
+spacy>=3.7.0
+msoffcrypto-tool>=5.0.0
+
+# NLP and translation
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
+
+# Integration
+google-api-python-client>=2.110.0
+google-auth-oauthlib>=1.1.0
+
+# Web scraping
+bs4
+
+# Additional requirements for DocuMorph AI
+uuid>=1.30
